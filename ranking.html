@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking • Strivo</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#53fc18',
+                        'primary-dark': '#45d614',
+                        'dark-bg': '#0f0f0f',
+                        'dark-card': '#1a1a1a',
+                        'dark-border': '#2a2a2a'
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body class="bg-dark-bg text-white font-sans">
+    <!-- Header -->
+    <header class="bg-dark-card border-b border-dark-border px-6 py-4 sticky top-0 z-30">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <button onclick="navigateTo('home')" class="p-2 hover:bg-dark-bg rounded-lg smooth-transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+                <h1 class="text-2xl font-bold text-primary logo-glow">Strivo</h1>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button onclick="navigateTo('search')" class="p-2 hover:bg-dark-bg rounded-lg smooth-transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto p-6">
+        <!-- Top 5 Streamers Mais Populares -->
+        <section class="mb-8">
+            <h2 class="text-xl font-bold text-primary mb-6">Top 5 Streamers Mais Populares</h2>
+            
+            <!-- Streamer 1 -->
+            <div class="bg-dark-card border border-dark-border rounded-lg p-4 mb-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                            <span class="text-black font-bold text-sm">1</span>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face" 
+                             alt="GamerPro" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h3 class="font-bold text-white">GamerPro</h3>
+                            <p class="text-sm text-gray-400">@gamerpro_oficial</p>
+                        </div>
+                        <span class="text-white text-lg">♂</span>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-primary font-bold text-lg">47.2K</div>
+                        <div class="text-xs text-gray-400">AUDIÊNCIA/DIA</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Streamer 2 -->
+            <div class="bg-dark-card border border-dark-border rounded-lg p-4 mb-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">2</span>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=60&h=60&fit=crop&crop=face" 
+                             alt="PubgMaster" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h3 class="font-bold text-white">PubgMaster</h3>
+                            <p class="text-sm text-gray-400">@pubg_master</p>
+                        </div>
+                        <span class="text-white text-lg">♀</span>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-primary font-bold text-lg">38.9K</div>
+                        <div class="text-xs text-gray-400">AUDIÊNCIA/DIA</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Streamer 3 -->
+            <div class="bg-dark-card border border-dark-border rounded-lg p-4 mb-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">3</span>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face" 
+                             alt="FifaKing" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h3 class="font-bold text-white">FifaKing</h3>
+                            <p class="text-sm text-gray-400">@fifa_king_br</p>
+                        </div>
+                        <span class="text-white text-lg">♂</span>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-primary font-bold text-lg">32.1K</div>
+                        <div class="text-xs text-gray-400">AUDIÊNCIA/DIA</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Streamer 4 -->
+            <div class="bg-dark-card border border-dark-border rounded-lg p-4 mb-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">4</span>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&crop=face" 
+                             alt="ValorantPro" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h3 class="font-bold text-white">ValorantPro</h3>
+                            <p class="text-sm text-gray-400">@valorant_pro</p>
+                        </div>
+                        <span class="text-white text-lg">⚥</span>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-primary font-bold text-lg">28.7K</div>
+                        <div class="text-xs text-gray-400">AUDIÊNCIA/DIA</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Streamer 5 -->
+            <div class="bg-dark-card border border-dark-border rounded-lg p-4 mb-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">5</span>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&crop=face" 
+                             alt="CSGOLegend" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h3 class="font-bold text-white">CSGOLegend</h3>
+                            <p class="text-sm text-gray-400">@csgo_legend</p>
+                        </div>
+                        <span class="text-white text-lg">♀</span>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-primary font-bold text-lg">24.5K</div>
+                        <div class="text-xs text-gray-400">AUDIÊNCIA/DIA</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ranking List -->
+        <section>
+            <h2 class="text-xl font-bold text-white mb-6">Ranking Geral</h2>
+            
+            <!-- User 1 -->
+            <div class="bg-dark-card border border-dark-border rounded-lg p-4 mb-3">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <span class="text-white font-bold text-lg">1</span>
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=50&h=50&fit=crop&crop=face" 
+                                 alt="paulinholokobr" class="w-12 h-12 rounded-full object-cover">
+                            <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-primary rounded-full flex items-center justify-center">
+                                <span class="text-black font-bold text-xs">K</span>
+                            </div>
+                        </div>
+                        <span class="text-white font-medium">paulinholokobr</span>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 10-7.07-7.07l-1.72 1.71"/>
+                                <path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 107.07 7.07l1.72-1.71"/>
+                            </svg>
+                            <span class="text-green-500 text-sm">🇧🇷</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User 2 -->
+            <div class="bg-dark-card border border-dark-border rounded-lg p-4 mb-3">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <span class="text-white font-bold text-lg">2</span>
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop&crop=face" 
+                                 alt="JonVlogs" class="w-12 h-12 rounded-full object-cover">
+                            <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-purple-500 rounded-full flex items-center justify-center">
+                                <svg class="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <span class="text-white font-medium">JonVlogs</span>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 10-7.07-7.07l-1.72 1.71"/>
+                                <path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 107.07 7.07l1.72-1.71"/>
+                            </svg>
+                            <span class="text-green-500 text-sm">🇧🇷</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User 3 -->
+            <div class="bg-dark-card border border-dark-border rounded-lg p-4 mb-3">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <span class="text-white font-bold text-lg">3</span>
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=50&h=50&fit=crop&crop=face" 
+                                 alt="facada" class="w-12 h-12 rounded-full object-cover">
+                            <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-primary rounded-full flex items-center justify-center">
+                                <span class="text-black font-bold text-xs">K</span>
+                            </div>
+                        </div>
+                        <span class="text-white font-medium">facada</span>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 10-7.07-7.07l-1.72 1.71"/>
+                                <path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 107.07 7.07l1.72-1.71"/>
+                            </svg>
+                            <span class="text-green-500 text-sm">🇧🇷</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User 4 -->
+            <div class="bg-dark-card border border-dark-border rounded-lg p-4 mb-3">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <span class="text-white font-bold text-lg">4</span>
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=50&h=50&fit=crop&crop=face" 
+                                 alt="alanzoka" class="w-12 h-12 rounded-full object-cover">
+                            <div class="absolute -bottom-1 -left-1 w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
+                                <svg class="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+                                </svg>
+                            </div>
+                            <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-purple-500 rounded-full flex items-center justify-center">
+                                <svg class="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <span class="text-white font-medium">alanzoka</span>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <div class="w-4 h-4 bg-gray-600 rounded"></div>
+                            <div class="w-4 h-4 bg-gray-600 rounded"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User 5 -->
+            <div class="bg-dark-card border border-dark-border rounded-lg p-4 mb-3">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <span class="text-white font-bold text-lg">5</span>
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=50&h=50&fit=crop&crop=face" 
+                                 alt="balanotv" class="w-12 h-12 rounded-full object-cover">
+                            <div class="absolute -bottom-1 -left-1 w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
+                                <svg class="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+                                </svg>
+                            </div>
+                            <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-primary rounded-full flex items-center justify-center">
+                                <span class="text-black font-bold text-xs">K</span>
+                            </div>
+                        </div>
+                        <span class="text-white font-medium">balanotv</span>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <div class="w-4 h-4 bg-gray-600 rounded"></div>
+                            <div class="w-4 h-4 bg-gray-600 rounded"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function navigateTo(page) {
+            switch(page) {
+                case 'home':
+                    window.location.href = 'index.html';
+                    break;
+                case 'search':
+                    window.location.href = 'search.html';
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

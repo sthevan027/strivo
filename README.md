@@ -1,165 +1,127 @@
-# 🎮 Strivo
+# Strivo - Plataforma de Streaming
 
-**Strivo** é uma plataforma de rede social moderna focada em gamers e criadores de conteúdo, oferecendo uma interface elegante e intuitiva para compartilhamento de clips, lives e interação entre usuários.
+## 📱 Sobre o Projeto
 
-## ✨ Funcionalidades
+O **Strivo** é um protótipo de plataforma de streaming que tem como objetivo se tornar referência no mercado de streaming, com forte integração social e ferramentas inovadoras para criadores e espectadores.
 
-### 🏠 Feed Principal
-- **Stories interativos** com design circular e gradiente
-- **Feed de posts** com suporte a imagens e vídeos
-- **Sistema de curtidas** e comentários em tempo real
-- **Interface responsiva** adaptável a diferentes dispositivos
+## 🎯 Funcionalidades Implementadas
 
-### 👤 Perfil de Usuário
-- **Perfil personalizável** com foto, nome, bio e username
-- **Grid estilo Instagram** para visualização de conteúdo
-- **Métricas sociais** (seguidores, seguindo, posts)
-- **Sistema de verificação** com badge verificado
+### ✅ Versão Beta (MVP)
 
-### 📝 Criação de Conteúdo
-- **Modal de criação** com seleção de tipo de mídia
-- **Suporte a legendas** e tags de jogos
-- **Upload de imagens e vídeos** (interface preparada)
-- **Publicação instantânea** no feed
+- **Página Inicial**: Top streamers do mês, lives em destaque e categorias principais
+- **Perfil de Usuário**: Interface similar ao Instagram com estatísticas e abas
+- **Categorias**: Principais categorias ao vivo e seção de interações
+- **Sistema de Apoio**: Doações diretas aos streamers com valores fixos
+- **Ranking**: Top 5 streamers mais populares e ranking geral
+- **Configurações**: Interface de configurações inspirada no Meta
+- **Busca**: Página de busca com categorias e streamers populares
 
-### 🔧 Funcionalidades Adicionais
-- **Sistema de notificações** em tempo real
-- **Busca integrada** no cabeçalho
-- **Menu de perfil** com opções rápidas
-- **Tema escuro** com paleta de cores personalizada
-- **Animações suaves** e transições elegantes
+### 🎨 Design
 
-## 🎨 Design
+- **Tema Escuro**: Interface moderna com cores escuras
+- **Cor Primária**: Verde vibrante (#53fc18) para elementos de destaque
+- **Responsivo**: Adaptado para desktop e mobile
+- **Animações**: Transições suaves e efeitos hover
 
-### Paleta de Cores
-- **Primary**: `#53fc18` (Verde neon vibrante)
-- **Primary Dark**: `#45d614` (Verde escuro para hover)
-- **Dark Background**: `#0f0f0f` (Fundo principal)
-- **Dark Card**: `#1a1a1a` (Cartões e elementos)
-- **Dark Border**: `#2a2a2a` (Bordas e divisores)
+## 📁 Estrutura do Projeto
 
-### Características Visuais
-- **Interface minimalista** com foco na usabilidade
-- **Animações CSS** personalizadas (fade-in, slide-up, pulse-glow)
-- **Scrollbar customizada** com cores do tema
-- **Tipografia moderna** com hierarquia clara
-- **Elementos interativos** com feedback visual
-
-## 🚀 Tecnologias
-
-### Frontend
-- **HTML5** com estrutura semântica
-- **CSS3** com variáveis customizadas e animações
-- **JavaScript ES6+** com manipulação de DOM moderna
-- **Tailwind CSS** via CDN para estilização rápida
-
-### Estrutura do Projeto
 ```
-strivo/
-├── index.html          # Página principal com feed
-├── profile.html        # Página de perfil detalhada
-├── app.js             # Lógica JavaScript principal
-├── styles.css         # Estilos personalizados
-├── profile.css        # Estilos específicos do perfil
-└── README.md          # Documentação do projeto
+strivo-1/
+├── index.html          # Página inicial
+├── profile.html        # Perfil do usuário
+├── categories.html     # Categorias e interações
+├── support.html        # Sistema de apoio/doação
+├── ranking.html        # Ranking de streamers
+├── settings.html       # Configurações
+├── search.html         # Página de busca
+├── styles.css          # Estilos principais
+├── profile.css         # Estilos específicos do perfil
+└── README.md           # Documentação
 ```
 
-## 📦 Instalação e Uso
+## 🚀 Como Usar
 
-### Pré-requisitos
-- Navegador web moderno (Chrome, Firefox, Safari, Edge)
-- Servidor local (opcional, para desenvolvimento)
+1. Abra o arquivo `index.html` em qualquer navegador moderno
+2. Navegue entre as páginas usando os links e botões
+3. Explore as diferentes funcionalidades implementadas
 
-### Executando o Projeto
+## 🛠️ Tecnologias Utilizadas
 
-1. **Clone o repositório**
-```bash
-git clone <url-do-repositorio>
-cd strivo
-```
+- **HTML5**: Estrutura semântica
+- **CSS3**: Estilos e animações
+- **Tailwind CSS**: Framework CSS para estilização rápida
+- **JavaScript**: Interatividade básica
 
-2. **Abra o projeto**
-```bash
-# Método 1: Abrir diretamente no navegador
-open index.html
+## 📱 Páginas Implementadas
 
-# Método 2: Usar servidor local (recomendado)
-python -m http.server 8000
-# ou
-npx serve .
-```
+### 1. Página Inicial (`index.html`)
+- Top 5 streamers do mês
+- Lives em destaque (GTA V, Minecraft, League of Legends)
+- Principais categorias de lives
+- Seção de jogos de tiro
 
-3. **Acesse no navegador**
-```
-http://localhost:8000
-```
+### 2. Perfil (`profile.html`)
+- Avatar circular com borda verde
+- Estatísticas (seguidores, seguindo, posts)
+- Abas (Posts, Klips, Lives)
+- Botões de ação (mensagens, editar, notificações)
 
-## 🎯 Como Usar
+### 3. Categorias (`categories.html`)
+- Principais categorias ao vivo (GTA, PUBG, Valorant)
+- Seção "Apenas Interação" com cards coloridos
+- Artes Visuais & Sons com DJ Set ao vivo
 
-### Navegação Básica
-1. **Feed Principal**: Visualize posts de outros usuários
-2. **Criar Post**: Clique no botão "+" no cabeçalho
-3. **Perfil**: Acesse através do avatar no canto superior direito
-4. **Busca**: Use a barra de pesquisa no cabeçalho
+### 4. Apoio (`support.html`)
+- Interface de doação com valores fixos (R$ 5, 10, 25, 50)
+- Campo para mensagem personalizada
+- Histórico de apoios recentes
 
-### Criando Conteúdo
-1. Clique no botão de criar post (+)
-2. Escolha o tipo de mídia (Foto ou Vídeo)
-3. Adicione uma legenda e tag do jogo (opcional)
-4. Clique em "Publicar"
+### 5. Ranking (`ranking.html`)
+- Top 5 streamers mais populares
+- Ranking geral com badges e ícones
+- Estatísticas de audiência diária
 
-### Personalizando Perfil
-1. Clique no avatar → "Editar Perfil"
-2. Atualize nome, username e bio
-3. Salve as alterações
+### 6. Configurações (`settings.html`)
+- Seção "Também da Meta" com apps relacionados
+- WhatsApp, Edits, Threads, Facebook, Messenger
+- Meta AI
 
-## 🔄 Estado da Aplicação
+### 7. Busca (`search.html`)
+- Barra de pesquisa
+- Buscas em alta
+- Categorias populares
+- Streamers populares
 
-O projeto utiliza um sistema de estado simples em JavaScript:
+## 🎨 Paleta de Cores
 
-```javascript
-const state = {
-    currentSection: 'home',    // Seção atual
-    postType: 'image',         // Tipo de post selecionado
-    profile: { /* dados */ },  // Informações do perfil
-    posts: []                  // Array de posts
-};
-```
+- **Primária**: #53fc18 (Verde vibrante)
+- **Primária Escura**: #45d614
+- **Fundo Escuro**: #0f0f0f
+- **Card Escuro**: #1a1a1a
+- **Borda Escura**: #2a2a2a
 
-## 🚧 Funcionalidades Futuras
+## 📱 Responsividade
 
-### Em Desenvolvimento
-- [ ] **Upload real de arquivos** (imagens/vídeos)
-- [ ] **Sistema de autenticação** completo
-- [ ] **Banco de dados** para persistência
-- [ ] **API REST** para backend
-- [ ] **Chat em tempo real** entre usuários
-- [ ] **Sistema de lives** integrado
+O projeto foi desenvolvido com foco na responsividade:
+- **Desktop**: Layout completo com todas as funcionalidades
+- **Tablet**: Adaptações para telas médias
+- **Mobile**: Layout otimizado para dispositivos móveis
 
-### Melhorias Planejadas
-- [ ] **PWA** (Progressive Web App)
-- [ ] **Notificações push**
-- [ ] **Modo offline** básico
-- [ ] **Compartilhamento social**
-- [ ] **Analytics** de engajamento
-- [ ] **Sistema de moderação**
+## 🔮 Funcionalidades Futuras
 
-## 🤝 Contribuindo
+- Lives em tempo real com chat interativo
+- Sistema de assinaturas recorrentes
+- Clips automáticos (highlights)
+- Replays (VOD)
+- Feed social com posts e stories
+- Notificações push
+- Gamificação com selos e conquistas
+- Dashboard para streamers
 
-1. **Fork** o projeto
-2. **Crie** uma branch para sua feature (`git checkout -b feature/nova-funcionalidade`)
-3. **Commit** suas mudanças (`git commit -m 'Adiciona nova funcionalidade'`)
-4. **Push** para a branch (`git push origin feature/nova-funcionalidade`)
-5. **Abra** um Pull Request
+## 👥 Equipe
 
-## 📝 Licença
+Este protótipo foi desenvolvido para apresentação e aprovação de design, seguindo as especificações e imagens de referência fornecidas.
 
-Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+## 📄 Licença
 
-## 👨‍💻 Desenvolvedor
-
-Desenvolvido com ❤️ para a comunidade gamer.
-
----
-
-**Strivo** - *Connecting creators* 🎮✨
+Este projeto é um protótipo para fins de demonstração e aprovação de design.
