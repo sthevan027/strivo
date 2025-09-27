@@ -124,4 +124,40 @@ Este protótipo foi desenvolvido para apresentação e aprovação de design, se
 
 ## 📄 Licença
 
-Este projeto é um protótipo para fins de demonstração e aprovação de design.
+Este projeto está sob licença proprietária. Todos os direitos reservados.
+
+### Direitos de Propriedade Intelectual
+
+**© 2024 Strivo. Todos os direitos reservados.**
+
+Este software e sua documentação são propriedade exclusiva da Strivo. É proibida a reprodução, distribuição, modificação ou uso comercial sem autorização expressa por escrito.
+
+### Proteção de Código
+
+- **Código Fonte**: Propriedade exclusiva da Strivo
+- **Design e Interface**: Direitos autorais protegidos
+- **Marca e Identidade Visual**: Marca registrada
+- **Algoritmos e Lógica de Negócio**: Segredos comerciais
+
+### Direitos de Imagem
+
+- **Imagens de Protótipo**: Propriedade da Strivo
+- **Assets de Design**: Direitos autorais protegidos
+- **Ícones e Elementos Visuais**: Marca registrada
+- **Screenshots e Demos**: Uso restrito
+
+### Uso Permitido
+
+- **Visualização**: Apenas para fins de demonstração
+- **Desenvolvimento**: Apenas para a equipe autorizada
+- **Documentação**: Uso interno da empresa
+
+### Contato
+
+Para questões sobre licenciamento ou uso comercial, entre em contato:
+- **Email**: legal@strivo.com
+- **Website**: https://strivo.com
+
+---
+
+**AVISO LEGAL**: Este projeto contém informações proprietárias e confidenciais. O acesso não autorizado é estritamente proibido e pode resultar em ações legais.
