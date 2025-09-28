@@ -156,37 +156,43 @@ src/
 - CDN integration, WebRTC/RTMP clients
 - Performance monitoring, crash reporting
 
-## Integração (Mock)
-REST esperadas:
+## 🔗 Integração (APIs & WebSockets)
+
+### REST APIs
 ```
-POST /auth/login
-POST /auth/signup
-POST /auth/provider/{google|...}
-GET  /auth/session
+POST /auth/login { email, password }
+POST /auth/signup { name, email, password }
+POST /auth/provider/{google|...} { token }
+GET  /auth/session -> { user, tokens }
 POST /auth/logout
+
 GET  /profiles/:username
 POST /profiles/:username/follow
 DELETE /profiles/:username/follow
 GET  /profiles/:username/followers
 GET  /profiles/:username/following
-GET  /lives
-GET  /lives/:id
-POST /lives/:id/reactions
+
+GET  /lives?status=live&category=...
+GET  /lives/:id -> { playbackUrl, title, category, streamer }
+POST /lives/:id/reactions { type }
 GET  /lives/:id/viewers
-GET  /search
-GET  /top-streamers
+
+GET  /search?q=...
+GET  /top-streamers?period=month
+
 POST /clips/:id/like
-POST /clips/:id/comment
-GET  /ranking
-POST /donations
-GET  /donations/history
+POST /clips/:id/comment { text }
+GET  /ranking?period=month
+
+POST /donations { toStreamerId, amount, message? }
+GET  /donations/history?userId=...
 ```
 
-Sockets (cliente):
+### WebSockets
 ```
 connect -> join_live_room { liveId }
+emit message:send -> { text, liveId }
 on message:new -> { id, user, text, sentAt }
-emit message:send -> { text }
 on live:viewers -> { count }
 on live:reaction -> { type, total }
 ```

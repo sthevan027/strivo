@@ -1,14 +1,18 @@
-# Strivo Frontend — Documentação Oficial (Mobile/React Native)
+# Strivo — Documentação Oficial
 
-Este documento descreve exclusivamente o frontend mobile do Strivo usando React Native com Expo: arquitetura, stack sugerida, fluxos funcionais, contratos de integração (mock), padrões, qualidade e execução local.
+Este repositório contém a documentação completa do projeto Strivo, incluindo frontend mobile (React Native/Expo) e backend (Node.js/TypeScript).
 
-▶ Consulte a versão detalhada em `docs/Frontend.md`. Lançamento prioriza experiência mobile-first — veja a seção "Mobile-first (lançamento inicial)" no documento.
+▶ Consulte a versão detalhada em `docs/Frontend.md` (mobile) e `docs/Backend.md` (APIs). Lançamento prioriza experiência mobile-first.
 
 —
 
 ## 🧭 Visão Geral
 
-O **Strivo** é uma plataforma de lives com forte integração social. O frontend mobile entrega as experiências de:
+O **Strivo** é uma plataforma de lives com forte integração social. O projeto é composto por:
+
+- **Frontend Mobile**: React Native/Expo para iOS e Android
+- **Backend**: Node.js/TypeScript com APIs REST e WebSockets
+- **Infraestrutura**: Streaming, CDN, banco de dados escalável
 
 ## 🎯 Funcionalidades MVP (Beta)
 
@@ -48,8 +52,9 @@ Funcionalidades pós-beta estão descritas em `docs/Frontend.md`.
 
 —
 
-## 🧱 Stack Sugerida (Frontend Mobile)
+## 🧱 Stack Sugerida
 
+### Frontend Mobile
 - Framework: React Native + Expo (TypeScript)
 - Navegação: Expo Router (React Navigation)
 - Estilos: NativeWind/Tamagui
@@ -62,20 +67,33 @@ Funcionalidades pós-beta estão descritas em `docs/Frontend.md`.
 - Qualidade: ESLint, Prettier, Husky + lint-staged
 - Testes: Jest + @testing-library/react-native; Detox/Maestro (E2E)
 
+### Backend
+- Runtime: Node.js + TypeScript
+- Framework: Express.js ou Fastify
+- Banco: PostgreSQL + Redis (cache)
+- ORM: Prisma ou TypeORM
+- Auth: JWT + refresh tokens
+- Realtime: Socket.IO
+- Streaming: WebRTC SFU, RTMP, HLS
+- CDN: CloudFlare ou AWS CloudFront
+- Deploy: Docker + Kubernetes
+- Monitoramento: Prometheus + Grafana
+
 > Gerenciador de pacotes: usamos pnpm. Todos os comandos abaixo usam pnpm.
 
 —
 
 ## ▶️ Como Rodar Localmente
 
-1. Requisitos: Node LTS (>=18), pnpm (>=9)
-2. Clonar o repositório e instalar deps:
+### Frontend Mobile
+1. Requisitos: Node LTS (>=18), pnpm (>=9), Expo CLI
+2. Instalar dependências:
 
 ```bash
 pnpm install
 ```
 
-3. Criar arquivo `.env` com variáveis mínimas (Expo usa EXPO_PUBLIC_*):
+3. Criar `.env` com variáveis:
 
 ```bash
 EXPO_PUBLIC_API_URL=http://localhost:4000
@@ -83,17 +101,35 @@ EXPO_PUBLIC_SOCKET_URL=http://localhost:4000
 EXPO_PUBLIC_CDN_URL=http://localhost:8080
 ```
 
-4. Executar em desenvolvimento (Expo):
+4. Executar:
 
 ```bash
 pnpm expo start
-```
-
-5. Rodar em dispositivo/emulador e build local:
-
-```bash
 pnpm expo run:android
 pnpm expo run:ios
+```
+
+### Backend
+1. Requisitos: Node LTS (>=18), PostgreSQL, Redis
+2. Instalar dependências:
+
+```bash
+pnpm install
+```
+
+3. Criar `.env` com variáveis:
+
+```bash
+DATABASE_URL=postgresql://user:pass@localhost:5432/strivo
+REDIS_URL=redis://localhost:6379
+JWT_SECRET=your-secret-key
+API_PORT=4000
+```
+
+4. Executar:
+
+```bash
+pnpm dev
 ```
 
 —
@@ -102,18 +138,21 @@ pnpm expo run:ios
 
 ```
 Strivo/
-├─ app/                        # Rotas (Expo Router)
-├─ assets/                     # Ícones, fontes, imagens
-├─ src/
-│  ├─ components/
-│  ├─ features/                # auth, live, explore, donate...
-│  ├─ hooks/
-│  ├─ lib/                     # api, socket, analytics, updates
-│  ├─ stores/
-│  ├─ styles/
-│  ├─ types/
-│  └─ utils/
-├─ .env.example                # Exemplo de env
+├─ frontend/                   # App mobile (React Native/Expo)
+│  ├─ app/                     # Rotas (Expo Router)
+│  ├─ assets/                  # Ícones, fontes, imagens
+│  └─ src/                     # Código fonte
+├─ backend/                    # APIs (Node.js/TypeScript)
+│  ├─ src/
+│  │  ├─ controllers/
+│  │  ├─ services/
+│  │  ├─ repositories/
+│  │  ├─ routes/
+│  │  └─ models/
+│  └─ tests/
+├─ docs/                       # Documentação
+│  ├─ Frontend.md
+│  └─ Backend.md
 └─ README.md
 ```
 
@@ -181,14 +220,14 @@ Páginas/componentes:
 
 —
 
-## 🧩 6. Infraestrutura de Frontend (MVP)
+## 🧩 6. Infraestrutura (MVP)
 
-- Streaming: reprodução via HLS.js; fallback para WebRTC quando necessário
-- CDN: URLs de mídia vindas do `NEXT_PUBLIC_CDN_URL`
-- Observabilidade: ErrorBoundary, logging no cliente e integração futura com Sentry
-- Métricas: Web Vitals + eventos customizados (page_view, live_join, donate_click)
-- Acessibilidade (WCAG 2.1 AA): navegação por teclado, labels e contrastes adequados
-- Performance: imagens otimizadas, lazy-loading, code-splitting, virtualização (chat)
+- **Streaming**: WebRTC, RTMP para publicação móvel
+- **CDN**: otimização de entrega de conteúdo
+- **Banco de dados**: sincronização offline/online
+- **Logs e métricas**: desempenho, erros, analytics
+- **OTA updates**: atualizações over-the-air
+- **Push notifications**: para engajamento
 
 —
 
@@ -260,16 +299,23 @@ Paleta base sugerida:
 
 ## 🧪 Testes
 
-- Unitários: componentes e hooks críticos (Vitest/Jest)
-- Integração: páginas/fluxos (Testing Library)
-- E2E: login, iniciar/assistir live, chat, doação (Playwright)
+### Frontend Mobile
+- **Unitários**: componentes e hooks críticos (Jest + @testing-library/react-native)
+- **Integração**: páginas/fluxos (Testing Library)
+- **E2E**: login, live, chat, doação (Detox/Maestro)
 
-Scripts típicos:
+### Backend
+- **Unitários**: services e repositories (Jest)
+- **Integração**: APIs completas (Supertest)
+- **E2E**: fluxos críticos (Postman/Newman)
+- **Load**: performance com Artillery
 
+Scripts:
 ```bash
 pnpm test
 pnpm test:watch
-pnpm e2e
+pnpm test:e2e
+pnpm test:load
 ```
 
 —
@@ -300,8 +346,8 @@ pnpm e2e
 
 ## 👤 Papéis (Contexto)
 
-- Chefe do projeto: liderança estratégica, roadmap e monetização
-- Engenheiro de software (este repo): estrutura técnica, documentação, revisão de PRs, qualidade e escalabilidade do frontend
+- **Chefe do projeto**: liderança estratégica, roadmap e monetização
+- **Engenheiro de software**: estrutura técnica, documentação, revisão de PRs, qualidade e escalabilidade do sistema completo
 
 —
 
