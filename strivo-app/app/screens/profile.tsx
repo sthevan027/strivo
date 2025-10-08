@@ -1,6 +1,6 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
-import { ChevronDown, Grid3X3, Menu, Plus, Repeat2, Video } from 'lucide-react-native';
+import { ChevronDown, Clapperboard, Grid3X3, Menu, Plus, Repeat2 } from 'lucide-react-native';
 import React, { useEffect, useState } from 'react';
 import {
   Animated,
@@ -80,8 +80,8 @@ const ProfileScreen = () => {
       <ScrollView showsVerticalScrollIndicator={false}>
       <View className="bg-black px-6 py-3 rounded-lg mb-4 flex flex-row w-full justify-between items-end">
         <View className='flex flex-row items-start'>
-        <Text className='text-white text-2xl font-bold '>strivo </Text>
-        <ChevronDown color="#fff" size={15} style={{marginTop:7}}/> <View className='bg-red-500 rounded-full p-1 mt-3'/>
+        <Text className='text-white text-3xl font-bold '>strivo </Text>
+        <ChevronDown color="#fff" size={18} style={{marginTop:6}}/> <View className='bg-red-500 rounded-full p-1 mt-3'/>
         </View>
         <TouchableOpacity
         onPress={() => router.push('/screens/configuration')}
@@ -157,22 +157,6 @@ locations={[0, 0.3, 0.7, 1]}  start={{ x: 0, y: 0 }}
           </Text>
         </View>
 
-        {/* Botões de Ação */}
-        <View className="flex-row justify-center gap-4 px-6 mb-6">
-          <TouchableOpacity
-            onPress={() => setIsEditModalVisible(true)}
-            className="flex-1 border-2  bg-[#25292e] rounded-xl py-3"
-          >
-            <Text className="text-green-500 text-center font-semibold text-base">
-              Editar Perfil
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity className="flex-1 border-2 bg-[#25292e]  rounded-xl py-3">
-            <Text className="text-green-500 text-center font-semibold text-base">
-              Compartilhar Perfil
-            </Text>
-          </TouchableOpacity>
-        </View>
 
         {/* Stats */}
         <View className="flex-row justify-around px-6 mb-6">
@@ -196,6 +180,23 @@ locations={[0, 0.3, 0.7, 1]}  start={{ x: 0, y: 0 }}
           </View>
         </View>
 
+        {/* Botões de Ação */}
+        <View className="flex-row justify-center gap-4 px-6 mb-6">
+          <TouchableOpacity
+            onPress={() => setIsEditModalVisible(true)}
+            className="flex-1 border-2  bg-[#25292e] rounded-xl py-3"
+          >
+            <Text className="text-green-500 text-center font-semibold text-base">
+              Editar Perfil
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity className="flex-1 border-2 bg-[#25292e]  rounded-xl py-3">
+            <Text className="text-green-500 text-center font-semibold text-base">
+              Compartilhar Perfil
+            </Text>
+          </TouchableOpacity>
+        </View>
+        
         {/* Tabs */}
         <View className="flex-row border-b border-gray-800">
           <TouchableOpacity
@@ -215,7 +216,7 @@ locations={[0, 0.3, 0.7, 1]}  start={{ x: 0, y: 0 }}
             }`}
           >
            
-             <Video size={32} color={activeTab === 'klips' ? '#22c55e' : '#9ca3af'} />
+             <Clapperboard size={32} color={activeTab === 'klips' ? '#22c55e' : '#9ca3af'} />
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => setActiveTab('republicados')}
