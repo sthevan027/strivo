@@ -7,14 +7,14 @@ import { View } from 'react-native'
 export  function Root() {
   return (
       <View style={{ flex: 1 }}>
-        <StatusBar style="dark" />
+        <StatusBar style="light" />
         <Stack
           screenOptions={{
             headerShown: false,
             animation: 'slide_from_right',
           }}
         >
-          <Stack.Screen name="index" options={{ title: 'Streams' }} />   
+          <Stack.Screen name="profile" options={{ title: 'Streams' }} />   
         </Stack>
             </View>
   )
