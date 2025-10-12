@@ -1,5 +1,5 @@
 import { useRouter } from 'expo-router';
-import { Archive, ArrowLeft, AtSign, Ban, Briefcase, CheckCircle, ChevronRight, Database, Download, Eye, Image, MessageCircle, MessageSquare, Monitor, Palette, Share2, Users, Zap } from 'lucide-react-native';
+import { Archive, ArrowLeft, AtSign, Ban, Briefcase, CheckCircle, ChevronRight, Database, Download, Expand, Eye, FileQuestion, Image, MessageCircle, MessageSquare, Monitor, Palette, Share2, Users, Zap } from 'lucide-react-native';
 import React from 'react';
 import { ScrollView, StatusBar, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -147,6 +147,17 @@ export default function Configuration() {
           <MenuItem 
             icon={<Briefcase size={24} color="#fff" />}
             title="Categoria e opções da Conta"
+          />
+        </Section>
+
+        <Section title="Atualizações da Strivo">
+          <MenuItem 
+            icon={<FileQuestion size={24} color="#fff" />}
+            title="Enviar sugestões para a Strivo"
+          />
+          <MenuItem 
+            icon={<Expand size={24} color="#fff" />}
+            title="Experiência antecipada da Strivo"
           />
         </Section>
 
